@@ -48,7 +48,9 @@ class HomePage extends StatelessWidget {
             ),
             child: Center(
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/detail');
+                },
                 child: Container(
                   width: 260,
                   height: 55,
