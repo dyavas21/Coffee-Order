@@ -15,9 +15,14 @@ class DetailPage extends StatelessWidget {
           children: [
             Row(
               children: [
-                Image.asset(
-                  'assets/back.png',
-                  width: 24,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/');
+                  },
+                  child: Image.asset(
+                    'assets/back.png',
+                    width: 24,
+                  ),
                 ),
                 SizedBox(
                   width: 303,
@@ -71,7 +76,7 @@ class DetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Size',
+              'SIZE',
               style: GoogleFonts.poppins(
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
@@ -81,7 +86,7 @@ class DetailPage extends StatelessWidget {
               height: 12,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
                   width: 85,
@@ -160,6 +165,198 @@ class DetailPage extends StatelessWidget {
       );
     }
 
+    Widget combo() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: 30,
+          left: 30,
+          right: 30,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'COMBO',
+              style: GoogleFonts.poppins(
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(
+              height: 12,
+            ),
+            Container(
+              width: double.infinity,
+              height: 80,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 20,
+                  right: 20,
+                  top: 20,
+                  bottom: 19,
+                ),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/food.png',
+                      width: 48,
+                      height: 27,
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'CROISSANT',
+                          style: GoogleFonts.poppins(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 2,
+                        ),
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/star.png',
+                              width: 10,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Image.asset(
+                              'assets/star.png',
+                              width: 10,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Image.asset(
+                              'assets/star.png',
+                              width: 10,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Image.asset(
+                              'assets/star.png',
+                              width: 10,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Image.asset(
+                              'assets/star1.png',
+                              width: 10,
+                            ),
+                            SizedBox(
+                              width: 6,
+                            ),
+                            Text(
+                              '4.8',
+                              style: GoogleFonts.poppins(
+                                color: Color(0xffE7E7E7),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      width: 130,
+                    ),
+                    Image.asset(
+                      'assets/add.png',
+                      width: 24,
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      );
+    }
+
+    Widget akhir() {
+      return Container(
+        margin: EdgeInsets.only(
+          bottom: 30,
+          left: 30,
+          right: 30,
+        ),
+        child: Row(
+          children: [
+            Image.asset(
+              'assets/keranjang.png',
+              width: 67,
+            ),
+            SizedBox(
+              width: 15,
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                top: 10,
+              ),
+              width: 250,
+              height: 55,
+              decoration: BoxDecoration(
+                color: Color(0xff023E4A),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  top: 17,
+                  left: 24,
+                  right: 22,
+                  bottom: 17,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'ADD TO BAG',
+                      style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 24,
+                    ),
+                    Image.asset(
+                      'assets/line.png',
+                      height: 27,
+                    ),
+                    SizedBox(
+                      width: 21,
+                    ),
+                    Text(
+                      '\$ 5.99',
+                      style: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: Color(0xffD1E1E0),
       body: Column(
@@ -167,6 +364,9 @@ class DetailPage extends StatelessWidget {
         children: [
           header(),
           size(),
+          combo(),
+          Spacer(),
+          akhir(),
         ],
       ),
     );
